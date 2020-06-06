@@ -1,5 +1,5 @@
 function myFunction() {
-    const zoom = new Zoom(
+    const zoom = new zoommeetingcreator.Zoom(
         PropertiesService.getScriptProperties().getProperty('ZOOM_API_KEY'),
         PropertiesService.getScriptProperties().getProperty('ZOOM_API_SECRET')
     );
@@ -13,7 +13,7 @@ function myFunction() {
         duration: 60,
         timezone: 'Asia/Tokyo',
     });
-    const slack = new Slack();
+    const slack = new zoommeetingcreator.Slack();
 
     // @see https://api.slack.com/messaging/composing/layouts#attachments
     slack.sendToWebHook(
