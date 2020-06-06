@@ -1,3 +1,9 @@
+[![License: MIT](https://img.shields.io/npm/l/@silverbirder/zoom-meeting-creator.svg)](https://opensource.org/licenses/MIT)
+[![npm download](https://img.shields.io/npm/dt/@silverbirder/zoom-meeting-creator.svg)](https://www.npmjs.com/package/@silverbirder/zoom-meeting-creator)
+[![npm version](https://img.shields.io/npm/v/@silverbirder/zoom-meeting-creator)](https://www.npmjs.com/package/@silverbirder/zoom-meeting-creator)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/@silverbirder/zoom-meeting-creator)](https://www.npmjs.com/package/@silverbirder/zoom-meeting-creator)
+[![twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fsilver_birder)](https://twitter.com/silver_birder)
+
 # zoom-meeting-creator
 ## Overview
 zoom-meeting-creator is a Google Apps Script for creating zoom meetings.
