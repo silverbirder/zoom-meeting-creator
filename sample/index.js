@@ -8,29 +8,56 @@ function myFunction() {
         PropertiesService.getScriptProperties().getProperty('ZOOM_USER_EMAIL')
     );
     // @see https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate#request-body
-    const response = zoom.createUserMeeting(user.id, {
+    const zoomResponse = zoom.createUserMeeting(user.id, {
         type: 2,
         duration: 60,
         timezone: 'Asia/Tokyo',
     });
-
     const slack = new Slack();
-    // @see
+    const templateString1 = ({lastName}) => lastName + "さんがあなたを予約されたZoomミーティングに招待しています。";
+    const templateString2 = ({joinUrl}) => "Zoomミーティングに参加する  <" + joinUrl + "|" + joinUrl + ">";
+    const templateString3 = ({id, password}) => "ミーティングID: " + id + "  パスワード: " + password;
+
+    const str1 = templateString1({
+        lastName: user.first_name,
+    });
+    const str2 = templateString2({
+        joinUrl: zoomResponse.join_url,
+    });
+    const str3 = templateString3({
+        id: zoomResponse.id,
+        password: zoomResponse.password
+    });
+
+    // @see https://api.slack.com/messaging/composing/layouts#attachments
     slack.sendToWebHook(
         PropertiesService.getScriptProperties().getProperty('SLACK_WEB_HOOK'),
         {
-            attachments: {
+            attachments: [{
                 blocks: [
                     {
-                        type: "section",
+                        "type": "section",
                         "text": {
-                            type: "plain_text",
-                            text: "id:" + response.id + "join_url:" + response.join_url,
-                            emoji: true,
+                            "type": "mrkdwn",
+                            "text": str1,
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": str2,
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": str3,
                         }
                     }
                 ]
-            }
+            }]
         }
     );
 }
