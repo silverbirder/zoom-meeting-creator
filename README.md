@@ -1,1 +1,1 @@
-# zoom-room-creator
+# zoom-meeting-creator

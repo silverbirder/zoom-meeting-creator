@@ -1,7 +1,7 @@
 {
-  "name": "@silverbirder/zoom-room-creator",
+  "name": "@silverbirder/zoom-meeting-creator",
   "version": "1.0.0",
-  "description": "zoom-room-creator",
+  "description": "zoom-meeting-creator",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Silver-birder/zoom-room-creator.git"
+    "url": "git+https://github.com/Silver-birder/zoom-meeting-creator.git"
   },
   "keywords": [
     "Google Apps Script",
@@ -27,9 +27,9 @@
   "author": "silverbirder <silverbirder@gmail.com> (https://silver-birder.github.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Silver-birder/zoom-room-creator/issues"
+    "url": "https://github.com/Silver-birder/zoom-meeting-creator/issues"
   },
-  "homepage": "https://github.com/Silver-birder/zoom-room-creator#readme",
+  "homepage": "https://github.com/Silver-birder/zoom-meeting-creator#readme",
   "devDependencies": {
     "@google/clasp": "^2.3.0",
     "@types/google-apps-script": "^1.0.10",
