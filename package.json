@@ -7,12 +7,12 @@
   "scripts": {
     "init": "clasp create . --rootDir ./src",
     "login": "clasp login",
-    "clone": "clasp clone",
-    "push": "clasp push",
-    "deploy": "clasp deploy",
-    "prepare": "npm run build",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "push": "clasp push",
+    "prepare": "npm run build",
+    "deploy": "clasp deploy",
+    "clone": "clasp clone"
   },
   "repository": {
     "type": "git",
