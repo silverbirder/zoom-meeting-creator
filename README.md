@@ -5,7 +5,7 @@
 [![twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fsilver_birder)](https://twitter.com/silver_birder)
 
 # zoom-meeting-creator
-## Overview
+## Description
 zoom-meeting-creator is a Google Apps Script for creating zoom meetings.
 
 ## Usage
