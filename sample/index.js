@@ -10,9 +10,27 @@ function myFunction() {
     // @see https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate#request-body
     const response = zoom.createUserMeeting(user.id, {
         type: 2,
-        start_time: '2020-05-20T23:00:00Z',
         duration: 60,
         timezone: 'Asia/Tokyo',
     });
-    Logger.log(response);
+
+    const slack = new Slack();
+    // @see
+    slack.sendToWebHook(
+        PropertiesService.getScriptProperties().getProperty('SLACK_WEB_HOOK'),
+        {
+            attachments: {
+                blocks: [
+                    {
+                        type: "section",
+                        "text": {
+                            type: "plain_text",
+                            text: "id:" + response.id + "join_url:" + response.join_url,
+                            emoji: true,
+                        }
+                    }
+                ]
+            }
+        }
+    );
 }
