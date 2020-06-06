@@ -1,7 +1,7 @@
 {
   "name": "@silverbirder/zoom-meeting-creator",
   "version": "1.0.0",
-  "description": "zoom-meeting-creator",
+  "description": "zoom-meeting-creator is a Google Apps Script for creating zoom meetings.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
