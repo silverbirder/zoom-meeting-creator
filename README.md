@@ -10,8 +10,8 @@ zoom-meeting-creator is a Google Apps Script for creating zoom meetings.
 
 ## Usage
 ### Prepare
-1. Get the Zoom API Key and Secret (https://marketplace.zoom.us/docs/guides/build/jwt-app)
-1. (Optional) Get the Slack WebHook URL (https://api.slack.com/messaging/webhooks) 
+1. Get the Zoom API Key and Secret ([https://marketplace.zoom.us/docs/guides/build/jwt-app](https://marketplace.zoom.us/docs/guides/build/jwt-app))
+1. (Optional) Get the Slack WebHook URL ([https://api.slack.com/messaging/webhooks](https://api.slack.com/messaging/webhooks)) 
 
 ### Console
 1. Access the Your [Google Apps Script](https://script.google.com)
