@@ -3,7 +3,7 @@
 import URLFetchRequestOptions = GoogleAppsScript.URL_Fetch.URLFetchRequestOptions;
 import HttpMethod = GoogleAppsScript.URL_Fetch.HttpMethod;
 
-// @see https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
+// @see https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate#request-body
 interface IUserMeetingParameter {
     topic: string,
     type: number,
@@ -43,6 +43,7 @@ interface IUserMeetingParameter {
         registrants_email_notification: boolean
     }
 }
+// @see https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate#responses
 interface IUserMeetingResponse {
     id: number,
     topic: string,
@@ -56,7 +57,7 @@ interface IUserMeetingResponse {
     password: string,
 }
 
-// @see https://marketplace.zoom.us/docs/api-reference/zoom-api/users/users
+// @see https://marketplace.zoom.us/docs/api-reference/zoom-api/users/users#responses
 interface IUser {
     id: string,
     first_name: string,
