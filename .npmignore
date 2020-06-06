@@ -1,0 +1,7 @@
+.idea
+.clasp.json
+dist/appsscript.json
+tsconfig.json
+webpack.config.js
+__tests__/
+src/
