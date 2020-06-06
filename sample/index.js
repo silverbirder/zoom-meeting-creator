@@ -14,20 +14,6 @@ function myFunction() {
         timezone: 'Asia/Tokyo',
     });
     const slack = new Slack();
-    const templateString1 = ({lastName}) => lastName + "さんがあなたを予約されたZoomミーティングに招待しています。";
-    const templateString2 = ({joinUrl}) => "Zoomミーティングに参加する  <" + joinUrl + "|" + joinUrl + ">";
-    const templateString3 = ({id, password}) => "ミーティングID: " + id + "  パスワード: " + password;
-
-    const str1 = templateString1({
-        lastName: user.first_name,
-    });
-    const str2 = templateString2({
-        joinUrl: zoomResponse.join_url,
-    });
-    const str3 = templateString3({
-        id: zoomResponse.id,
-        password: zoomResponse.password
-    });
 
     // @see https://api.slack.com/messaging/composing/layouts#attachments
     slack.sendToWebHook(
@@ -39,21 +25,35 @@ function myFunction() {
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": str1,
+                            "text": user.first_name + "" + user.last_name + " is inviting you to a scheduled Zoom meeting",
                         }
                     },
                     {
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": str2,
+                            "text": "Join Zoom Meeting",
                         }
                     },
                     {
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": str3,
+                            "text": "<" + zoomResponse.join_url + "|" + zoomResponse.join_url + ">",
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Meeting ID: " + zoomResponse.id,
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Password: " + zoomResponse.password,
                         }
                     }
                 ]
